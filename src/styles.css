@@ -1,0 +1,13 @@
+/* Create-react-app utiliza web-pack que es el encargado de cargar estilos o imagenes en js */
+
+.cardGreen {
+    background: #0cad42;
+    color: rgb(250, 248, 248);
+    padding: 20px;
+}
+
+.cardRed {
+    background: #e40c0c;
+    color: rgb(255, 246, 246);
+    padding: 20px;
+}
