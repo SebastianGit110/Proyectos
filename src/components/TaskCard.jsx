@@ -1,16 +1,23 @@
 import { useContext } from "react";
 import { TaskContextNom } from "../context/TaskContext";
 
-function TaskCard({ task, eliminarTarea }) {
-
+function TaskCard({ task }) {
   /* const valor = useContext(TaskContextNom); // Estamos usando la var x del contexto
-  console.log(valor)
+  console.log(valor)  
  */
+
+  const { deleteTask } = useContext(TaskContextNom);
+
   return (
-    <div>
-      <h1>{task.title}</h1>
-      <p>{task.description}</p>
-      <button onClick={() => eliminarTarea(task.id)}>Eliminar</button>
+    <div className="bg-gray-800 text-white p-4 rounded-md">
+      <h1 className="text-xl font-bold capitalize">{task.title}</h1>
+      <p className="text-gray-500 text-sm">{task.description}</p>
+      <button
+        className="bg-red-500 px-2 py-1 rounded-md mt-4 hover:bg-red-400"
+        onClick={() => deleteTask(task.id)}
+      >
+        Eliminar
+      </button>
     </div>
   );
 }

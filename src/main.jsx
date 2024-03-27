@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import './index.css'
 import { TaskContextProvider } from "./context/TaskContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -29,5 +30,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 - Crear un componente especial que nos da react, la funcion createContext() devuelve un objeto y este sera el nombre de la etiqueta contenedora, en el componente creado en codigo estara esta esta etiqueta pero con .Provider se crea el componente
 - createContext -> Crea el contexto, useContext -> usa el contexto
 - Como yo puedo crear varios contextos, en ell componente en el que quiera usar uno de ellos, tengo que decir cual contexto
+- Tailwindcss es un framework de css para estilizar mi pagina
 
 */

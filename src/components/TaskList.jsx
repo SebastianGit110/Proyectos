@@ -1,26 +1,19 @@
+import { useContext } from "react";
+import { TaskContextNom } from "../context/TaskContext";
 import TaskCard from "./TaskCard";
 
-function TaskList({ tareas, eliminarTarea }) {
-  // Ahora el arreglo lo contiene el componente App y se lo pasa al componente por props
-  /* const [tasks, setTasks] = useState(data); // useState([]) -> const name = []
+function TaskList() {
+  const { tasks } = useContext(TaskContextNom); // El deleteTask se lo pasamos directamente a TaskCars, pero el array task si toca pasarlo a TaskCard ya que se va recorriendo y se le pasa es cada valor por cada posicion
 
-  console.log("hola");
-
-  /* useEffect(() => {
-    setTasks(data);
-    console.log("effect");
-  }, []); */
-  // Cuando se haya inicializado el componente -> setTasks(data) porque si se hace en el useState sale error porque como todavia el componente no se ha inicializado no puede acceder a data */
-
-  if (tareas.length === 0) {
-    return <h1>No hay tareas</h1>;
+  if (tasks.length === 0) {
+    return <h1 className="text-white text-4xl font-bold text-center">No hay tareas</h1>;
   }
 
   return (
     // Recorre las tareas y las muestra en un componente
-    <div>
-      {tareas.map((task) => (
-        <TaskCard key={task.id} task={task} eliminarTarea={eliminarTarea} />
+    <div className="grid grid-cols-4 gap-2">
+      {tasks.map((task) => (
+        <TaskCard key={task.id} task={task} />
       ))}
 
       {/* {tasks.map((task) => {
